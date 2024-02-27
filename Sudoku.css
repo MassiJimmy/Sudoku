@@ -1,12 +1,13 @@
 body
 {
     font-family: Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
-    background-color: #fff;
-    margin: 0;
-    padding: 0;
     text-align: center;
+}
+
+hr
+{
+    height: 1px;
+    width: 500px;
 }
 
 h1
@@ -14,9 +15,31 @@ h1
     font-size: 24px;
     font-weight: bold;
     color: #000;
-    margin: 50px 0;
+    margin: 25px 0;
     padding: 0;
     text-align: center;
+}
+
+#errors
+{
+    color: #f00;
+    font-weight: bold;
+}
+
+#board
+{
+    margin: 0 auto;
+    width: 450px;
+    height: 450px;
+    background-color: #f00;
+}
+
+#Number
+{
+    margin: 0 auto;
+    width: 450px;
+    height: 50px;
+    background-color: #f00;
 }
 
 .sudokuCell
