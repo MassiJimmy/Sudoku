@@ -77,8 +77,21 @@ function setGame()
         {
             let tile = document.createElement("div");
             tile.id = i.toString() + "-" + j.toString();
-            tile.addEventListener("click", selectTile);
+            if(board[i][j] != 0)
+            {
+                tile.innerText = board[i][j];
+                tile.classList.add("tile-start");
+            }
+            if(i == 2 || i == 5)
+            {
+                tile.classList.add("horizontal-line");
+            }
+            if(j == 2 || j == 5)
+            {
+                tile.classList.add("vertical-line");
+            }
             tile.classList.add("tile");
+            tile.addEventListener("click", selectTile);
             tile.innerText = board[i][j] == 0 ? "" : board[i][j];
             document.getElementById("Board").appendChild(tile);
         }
@@ -99,15 +112,44 @@ function selectTile()
 {
     if(NumSelected)
     {
-        if(TileSelected != null)
+        if(this.innerText != "")
         {
-            TileSelected.classList.remove("tile-selected");
+            return;
         }
-        TileSelected = this;
-        TileSelected.classList.add("tile-selected");
+        let rc = this.id.split("-");
+        let r = parseInt(rc[0]);
+        let c = parseInt(rc[1]);
 
-        TileSelected.innerText = NumSelected.innerText;
-        let pos = TileSelected.id.split("-");
-        board[pos[0]][pos[1]] = parseInt(NumSelected.innerText);
+        if(solution[r][c] == NumSelected.id)
+        {
+            this.innerText = NumSelected.id;
+        }
+        else
+        {
+            error++;
+            document.getElementById("errors").innerText = "Error: " + error;
+        }
     }
 }
+
+function newGame()
+{
+    location.reload();
+}
+
+function solve()
+{
+    for(let i=0; i<9; i++)
+    {
+        for(let j=0; j<9; j++)
+        {
+            let tile = document.getElementById(i.toString() + "-" + j.toString());
+            if(tile.classList.contains("tile-start"))
+            {
+                continue;
+            }
+            tile.innerText = solution[i][j];
+        }
+    }
+}
+

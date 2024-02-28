@@ -51,6 +51,12 @@ h1
     align-items: center;
 }
 
+.tile:hover
+{
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
 #Number
 {
     margin: 0 auto;
@@ -104,3 +110,26 @@ h1
     color: white;
 }
 
+.tile-start
+{
+    background-color: whitesmoke;
+}
+
+.horizontal-line
+{
+    border-bottom: 1px solid black;
+}
+
+.vertical-line
+{
+    border-right: 1px solid black;
+}
+
+button
+{
+    margin: 4px 10px;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
