@@ -128,6 +128,7 @@ function selectTile()
         {
             error++;
             document.getElementById("errors").innerText = "Error: " + error;
+            //document.getElementById(this.id).classList.add("tile-error");
         }
     }
 }
@@ -149,6 +150,7 @@ function solve()
                 continue;
             }
             tile.innerText = solution[i][j];
+            tile.classList.add("tile-solved");
         }
     }
 }

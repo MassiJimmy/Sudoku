@@ -133,3 +133,13 @@ button
     font-weight: bold;
     cursor: pointer;
 }
+
+.tile-solved
+{
+    color: rgb(0, 155, 0);
+}
+
+.tile-error
+{
+    background-color: red;
+}  
