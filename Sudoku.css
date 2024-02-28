@@ -31,7 +31,6 @@ h1
     margin: 0 auto;
     width: 450px;
     height: 450px;
-    background-color: #f00;
     display: flex;
     flex-wrap: wrap;
 
@@ -57,16 +56,16 @@ h1
     margin: 0 auto;
     width: 450px;
     height: 50px;
-    background-color: #f00;
     display: flex;
     flex-wrap: wrap;
 }
 
 .Number
 {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border: 1px solid black;
+    margin: 2px;
 
     /* Text */
 
@@ -78,16 +77,30 @@ h1
     align-items: center;
 }
 
-.sudokuCell
+.number:hover
 {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #000;
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.tile
+{
+    width: 48px;
+    height: 48px;
+    border: 1px solid lightgray;
+    
+    /* Text */
     text-align: center;
-    line-height: 50px;
     font-size: 20px;
     font-weight: bold;
-    color: #000;
-    background-color: #fff;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.number-selected
+{
+    background-color: black;
+    color: white;
+}
+
