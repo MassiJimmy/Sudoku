@@ -68,6 +68,11 @@ function setGame()
         number.addEventListener("click", selectNumber);
         number.classList.add("number");
         document.getElementById("Number").appendChild(number);
+        let nbRestant = document.createElement("div");
+        nbRestant.id = i;
+        nbRestant.innerText = 0;
+        nbRestant.classList.add("nbRestant");
+        document.getElementById("nbRestant").appendChild(nbRestant);
     }
 
     //board 9x9
@@ -94,6 +99,10 @@ function setGame()
             tile.addEventListener("click", selectTile);
             tile.innerText = board[i][j] == 0 ? "" : board[i][j];
             document.getElementById("Board").appendChild(tile);
+            if(board[i][j] == nbRestant[i])
+            {
+                nbRestant[i].innerText ++;
+            }
         }
     }
 }
